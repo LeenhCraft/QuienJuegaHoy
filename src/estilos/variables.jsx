@@ -9,7 +9,7 @@ import {MdExitToApp} from "react-icons/md";
 import {FcPicture} from "react-icons/fc";
 import {CgMathPlus} from "react-icons/cg";
 import {TbBrandSupabase} from "react-icons/tb";
-import {FaReact} from "react-icons/fa";
+import {FaReact, FaCalendarAlt} from "react-icons/fa";
 import {BsArrowDown, BsArrowUpShort} from "react-icons/bs";
 import {FaBalanceScale} from "react-icons/fa";
 import {BsGoogle} from "react-icons/bs";
@@ -22,7 +22,7 @@ import {BsBarChartLine} from "react-icons/bs";
 import {AiOutlineCalculator} from "react-icons/ai";
 import {BsCalendarCheck} from "react-icons/bs";
 import logoGoogle from "../assets/google.png";
-import { FcGoogle } from "react-icons/fc";
+import {FcGoogle} from "react-icons/fc";
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -77,5 +77,6 @@ export const v = {
   iconobars: BsBarChartLine,
   iconocalculadora: AiOutlineCalculator,
   iconocheck: BsCalendarCheck,
+  iconocalendario: FaCalendarAlt,
   colorSecundario: `#DAC1FF`,
 };

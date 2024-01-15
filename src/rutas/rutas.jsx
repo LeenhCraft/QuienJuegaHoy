@@ -7,11 +7,10 @@ export function MisRutas() {
       <Route path="/" element={<a href="/futbol/profile">ir al perfil</a>} />
       <Route path="/futbol">
         <Route path="" element={<Home />} />
+        <Route path="partidos" element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route
-          element={<ProtectorRutas user={user} redirectTo="/futbol/login" />}
-        >
-          <Route path="profile" element={<Profile />} />
+        <Route element={<ProtectorRutas user={user} redirectTo={<Login />} />}>
+          <Route path="perfil" element={<Profile />} />
         </Route>
       </Route>
     </Routes>
