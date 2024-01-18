@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --fc-now-indicator-color: red;
+  --fc-today-bg-color: #374df5;
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: #f5f6f9;
+  --fc-border-color: transparent;
+}
+
 * {
   margin: 0;
   padding: 0;

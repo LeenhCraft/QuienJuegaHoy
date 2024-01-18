@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import {SectionMobile, Matches} from "../index";
+import {SectionMobile, Juegos} from "../index";
 
 export function Home() {
   return (
     <Container>
       <SectionMobile />
-      <Matches />
+      <Juegos />
     </Container>
   );
 }

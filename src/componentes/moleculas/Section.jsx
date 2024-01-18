@@ -1,26 +1,30 @@
 import styled from "styled-components";
-import {v} from "../../index.js";
+import {useState} from "react";
+import {v, CalendarioModal, useDatosStore} from "../../index.js";
 
 export function SectionMobile() {
-  const fecha = new Date();
-  const opcionesDeFormato = {day: "numeric", month: "long", year: "numeric"};
-  const fechaFormateada = fecha.toLocaleDateString("es-PE", opcionesDeFormato);
+  const [isOpen, setIsOpen] = useState(false);
+  const {fecha_seleccionada} = useDatosStore();
 
   return (
     <Container>
-      <p className="fecha px-4 text-xs uppercase">{fechaFormateada}</p>
+      <p className="fecha px-4 text-xs uppercase">{fecha_seleccionada}</p>
       <div className="flex justify-between px-4">
         <p className="text-2xl font-bold">Partidos</p>
-        <a href="#modalCalendar">
+        <button onClick={() => setIsOpen(true)}>
           <div className="cal-cont rounded-lg flex justify-center items-center">
             <v.iconocalendario />
           </div>
-        </a>
+        </button>
       </div>
+      <CalendarioModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </Container>
   );
 }
 const Container = styled.div`
+  position: sticky;
+  top: 0;
+  background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.textRGBa};
   padding: 1rem 0;
   z-index: 1;

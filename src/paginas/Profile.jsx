@@ -8,7 +8,7 @@ export function Profile() {
     <Container>
       <h1>Profile</h1>
       <h3>Bienvenido Home {user.full_name}</h3>
-      <img src={user.picture} />
+      <img alt={user.name} src={user.picture} />
       <button onClick={signout}>Cerrar</button>
     </Container>
   );

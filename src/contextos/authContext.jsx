@@ -1,5 +1,5 @@
 import {createContext, useContext, useEffect, useState} from "react";
-import {supabase} from "../index";
+import {supabase, InsertarUsuarios} from "../index";
 
 const AuthContext = createContext();
 
@@ -12,8 +12,9 @@ export const AuthContextProvider = ({children}) => {
           setUser(null);
         } else {
           setUser(session?.user.user_metadata);
-          console.log("event", event);
-          console.log("session", session?.user.user_metadata);
+          insertarUsuarios(session?.user.user_metadata, session?.user.id);
+          // console.log("event", event);
+          // console.log("session", session?.user.user_metadata);
         }
       }
     );
@@ -22,6 +23,18 @@ export const AuthContextProvider = ({children}) => {
       authListener.subscription;
     };
   }, []);
+
+  const insertarUsuarios = async (dataProvider, idsupabase) => {
+    const p = {
+      idgoogle: dataProvider.provider_id,
+      nombre: dataProvider.name,
+      nombre_completo: dataProvider.full_name,
+      foto: dataProvider.picture,
+      email: dataProvider.email,
+      idauth_supabase: idsupabase,
+    };
+    await InsertarUsuarios(p);
+  };
 
   return <AuthContext.Provider value={{user}}>{children}</AuthContext.Provider>;
 };

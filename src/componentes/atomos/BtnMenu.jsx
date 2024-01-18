@@ -26,7 +26,7 @@ const Container = styled.div`
     display: none;
     margin-left: 0.25rem;
   }
-  img{
+  img {
     filter: ${(props) => props.theme.filterNavMobile};
   }
 `;

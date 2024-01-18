@@ -15,6 +15,7 @@ export const useAuthStore = create((set) => ({
     } catch (error) {}
   },
   signout: async () => {
+    console.log("signout");
     const {error} = await supabase.auth.signOut();
     set({isAuth: false});
     if (error)

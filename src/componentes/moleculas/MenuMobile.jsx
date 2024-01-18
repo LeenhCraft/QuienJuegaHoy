@@ -1,14 +1,7 @@
 import styled from "styled-components";
 import {BtnMenu, LinksArray} from "../../index.js";
-import {useState} from "react";
-import {NavLink} from "react-router-dom";
 
 export function MenuMobile() {
-  const [opcionActiva, setOpcionActiva] = useState(null);
-
-  const handleOpcionClick = (index) => {
-    setOpcionActiva(index);
-  };
   return (
     <Container className="fixed bottom-0 min-h-[50px] max-h-[50px] w-full px-1">
       <div className="grid grid-cols-4 h-[50px]">

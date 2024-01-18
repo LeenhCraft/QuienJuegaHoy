@@ -4,7 +4,7 @@ export function MisRutas() {
   const {user} = UserAuth();
   return (
     <Routes>
-      <Route path="/" element={<a href="/futbol/profile">ir al perfil</a>} />
+      <Route path="/" element={<a href="/futbol/perfil">ir al perfil</a>} />
       <Route path="/futbol">
         <Route path="" element={<Home />} />
         <Route path="partidos" element={<Home />} />
