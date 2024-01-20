@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import HashLoader from "react-spinners/HashLoader";
 import {
   buscarJuego,
   TituloLiga,
@@ -7,21 +8,27 @@ import {
   useDatosStore,
   AlertaJuegos,
 } from "../../index";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import {ThemeContext} from "styled-components";
 
 export function Juegos() {
+  const temaActual = useContext(ThemeContext);
+  const [isLoading, setisLoading] = useState(true);
   const {partidos, actualizarCalendario} = useDatosStore();
 
   useEffect(() => {
     const date = new Date();
     date.setHours(date.getHours() - 5);
     const peruDate = date.toISOString().slice(0, 10);
-    actualizarCalendario(peruDate + "%");
+    actualizarCalendario(peruDate + "%").then(() => {
+      setisLoading(false);
+    });
   }, []);
 
   const [juegos, setJuegos] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const abrirModal = async (juegoId) => {
+    setisLoading(true);
     buscarJuego(juegoId).then(({data, error}) => {
       if (error) {
         console.log(error);
@@ -33,25 +40,34 @@ export function Juegos() {
       }, {});
       setJuegos(juegoData);
       setIsOpen(true);
+      setisLoading(false);
     });
   };
 
   return (
     <Container>
-      {Object.values(partidos).map((liga, index) => (
-        <div key={index}>
-          <TituloLiga nombre={liga.nombre} img={liga.logo} />
-          {liga.partidos.map((partido) => (
-            <TarjetaPartido
-              key={partido.id}
-              partido={partido}
-              abrirModal={abrirModal}
-            />
-          ))}
+      {isLoading ? (
+        <div className="w-full h-[calc(100vh-130px)] flex justify-center items-center">
+          <HashLoader color={temaActual.primary} />
         </div>
-      ))}
-      <JuegoModal isOpen={isOpen} setIsOpen={setIsOpen} data={juegos} />
-      {Object.keys(partidos).length === 0 && <AlertaJuegos />}
+      ) : (
+        <>
+          {Object.values(partidos).map((liga, index) => (
+            <div key={index}>
+              <TituloLiga nombre={liga.nombre} img={liga.logo} />
+              {liga.partidos.map((partido) => (
+                <TarjetaPartido
+                  key={partido.id}
+                  partido={partido}
+                  abrirModal={abrirModal}
+                />
+              ))}
+            </div>
+          ))}
+          <JuegoModal isOpen={isOpen} setIsOpen={setIsOpen} data={juegos} />
+          {Object.keys(partidos).length === 0 && <AlertaJuegos />}
+        </>
+      )}
     </Container>
   );
 }

@@ -27,6 +27,18 @@ export function InfoPartido({
             </div>
           </Container>
         );
+      case 2:
+        return (
+          <Container>
+            <Fecha text={fecha_utc} hora={hora} />
+            <div>
+              <Goles
+                goles_local={goles_local}
+                goles_visitante={goles_visitante}
+              />
+            </div>
+          </Container>
+        );
       case 5:
         return (
           <Container>

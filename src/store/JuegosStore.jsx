@@ -1,6 +1,5 @@
 import {create} from "zustand";
-import {getMatches, buscarJuego} from "../index";
-import {format} from "date-fns";
+import {getMatches} from "../index";
 
 export const useDatosStore = create((set) => ({
   calendarioActualizado: false,
@@ -28,11 +27,14 @@ export const useDatosStore = create((set) => ({
 
       set((state) => ({
         calendarioActualizado: !state.calendarioActualizado,
-        fecha_seleccionada: new Date(fecha_parametro).toLocaleDateString("es-PE", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        }),
+        fecha_seleccionada: new Date(fecha_parametro).toLocaleDateString(
+          "es-PE",
+          {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          }
+        ),
         partidos: competicionesTemp || [], // Actualiza la lista de partidos en el estado
       }));
     } catch (error) {
@@ -43,14 +45,4 @@ export const useDatosStore = create((set) => ({
       return {error};
     }
   },
-
-  // buscarJuego: async (juegoid) => {
-  //   try {
-  //     const {data, error} = await buscarJuego(juegoid);
-  //     return {data, error};
-  //   } catch (error) {
-  //     console.log(error.error_description || error.message + " buscarJuego");
-  //     return {error};
-  //   }
-  // },
 }));

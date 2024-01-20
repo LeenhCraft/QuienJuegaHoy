@@ -4,7 +4,7 @@ import {SectionMobile, Juegos} from "../index";
 export function Home() {
   return (
     <Container>
-      <SectionMobile />
+      <SectionMobile titulo="Partidos" />
       <Juegos />
     </Container>
   );

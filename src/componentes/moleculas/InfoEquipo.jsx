@@ -1,4 +1,3 @@
-import { BiColor } from "react-icons/bi";
 import styled from "styled-components";
 
 export function InfoEquipo({emblemSrc, nombreEquipo}) {

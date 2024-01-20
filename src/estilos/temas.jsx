@@ -1,4 +1,5 @@
 export const Light = {
+  primary: "#623ce6",
   body: "#f8f6f8",
   text: "#222226",
   textRGBa: "#222226",
@@ -10,6 +11,7 @@ export const Light = {
   filterNavMobile: "brightness(1) invert(0)",
 };
 export const Dark = {
+  primary: "#623ce6",
   body: "#202020",
   text: "#fff",
   textRGBa: "rgba(255, 255, 255,0.8)",
