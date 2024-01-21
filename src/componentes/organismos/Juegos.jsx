@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {ThemeContext} from "styled-components";
 import HashLoader from "react-spinners/HashLoader";
 import {
   buscarJuego,
@@ -7,14 +7,15 @@ import {
   JuegoModal,
   useDatosStore,
   AlertaJuegos,
+  scrollHook,
 } from "../../index";
 import {useContext, useEffect, useState} from "react";
-import {ThemeContext} from "styled-components";
 
 export function Juegos() {
   const temaActual = useContext(ThemeContext);
   const [isLoading, setisLoading] = useState(true);
   const {partidos, actualizarCalendario} = useDatosStore();
+  const [blockScroll, allowScroll] = scrollHook();
 
   useEffect(() => {
     const date = new Date();
@@ -44,8 +45,16 @@ export function Juegos() {
     });
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      blockScroll();
+    } else {
+      allowScroll();
+    }
+  }, [isOpen]);
+
   return (
-    <Container>
+    <Container className="aca">
       {isLoading ? (
         <div className="w-full h-[calc(100vh-130px)] flex justify-center items-center">
           <HashLoader color={temaActual.primary} />
@@ -73,4 +82,5 @@ export function Juegos() {
 }
 const Container = styled.div`
   margin-bottom: 50px;
+  overflow: hidden;
 `;

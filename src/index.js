@@ -31,6 +31,7 @@ export * from './estilos/breakpoints';
 export * from './estilos/temas';
 export * from './estilos/variables';
 export * from './hooks/protectorRutas';
+export { default as scrollHook } from './hooks/scrollHook';
 export * from './main';
 export * from './paginas/Buscar';
 export * from './paginas/Home';
