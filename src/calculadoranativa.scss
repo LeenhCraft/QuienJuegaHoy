@@ -1,0 +1,117 @@
+.calendar {
+  .calendar-header {
+    padding: 1rem 0 0;
+    .date-picker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-weight: 600;
+      .current-date {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-transform: capitalize;
+      }
+      .month-change {
+        font-size: 1.5rem;
+        outline: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        vertical-align: middle;
+        user-select: none;
+        position: relative;
+        white-space: nowrap;
+        z-index: 1;
+        font-weight: 500;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: rgb(55, 77, 245);
+        background-color: transparent;
+        border: none;
+        padding: 0.4em;
+        transition: background-color 200ms ease 0s, box-shadow 200ms ease 0s,
+          border-color 200ms ease 0s, color 200ms ease 0s;
+      }
+      button {
+        &:hover {
+          background-color: rgba(55, 77, 245, 0.15);
+          border-color: rgba(55, 77, 245, 0.15);
+          color: rgb(55, 77, 245);
+        }
+      }
+    }
+  }
+
+  .calendar-body {
+    .calendar-week-days {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      background-color: var(--fc-page-bg-color);
+      color: rgba(34, 34, 38, 0.45);
+      padding: 8px 0px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      font-weight: 600;
+      div {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+        animation: to-top 1s forwards;
+        &:hover {
+          transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+          background-color: #dbdfff;
+          border-radius: 50%;
+        }
+      }
+      .dia-vacio {
+        background-color: var(--fc-page-bg-color);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+      }
+      .current-date {
+        background-color: var(--fc-today-bg-color);
+        border-radius: 50%;
+        color: #fff;
+      }
+      .selected {
+        background-color: var(--fc-now-indicator-color);
+        border-radius: 50%;
+      }
+    }
+  }
+  .calendar-footer {
+    margin: 1rem 0 0;
+    padding: 0.5rem 0 1rem;
+    border-top: rgba(34, 34, 38, 0.45) 1px solid;
+    button {
+      transition: background-color 200ms ease 0s, box-shadow 200ms ease 0s,
+        border-color 200ms ease 0s, color 200ms ease 0s;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      border-radius: 24px;
+      padding: 3px 10px;
+      color: rgb(255, 255, 255);
+      background-color: rgb(55, 77, 245);
+      border: 1.5px solid rgb(55, 77, 245);
+    }
+  }
+}

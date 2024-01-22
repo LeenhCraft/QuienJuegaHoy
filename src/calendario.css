@@ -1,0 +1,126 @@
+.ostias .match {
+  width: calc(100vw - 60px);
+  min-width: calc(100vw - 20px);
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 0 rgba(48, 48, 48, 0.1), 0 4px 4px 0 rgba(48, 48, 48, 0.1);
+}
+.ostias .calendar-wh {
+  width: 100%;
+  height: 450px;
+}
+.ostias .fc .fc-toolbar-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.ostias .fc .fc-prev-button,
+.ostias .fc .fc-next-button {
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  z-index: 1;
+  font-weight: 500;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #374df5;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0.4em;
+  transition: background-color 200ms ease 0s, box-shadow 200ms ease 0s,
+    border-color 200ms ease 0s, color 200ms ease 0s;
+}
+.ostias .fc .fc-prev-button:hover,
+.ostias .fc .fc-next-button:hover {
+  background-color: rgba(55, 77, 245, 0.15);
+  border-color: rgba(55, 77, 245, 0.15);
+  color: #374df5;
+}
+.ostias .fc .fc-prev-button:focus,
+.ostias .fc .fc-next-button:focus {
+  background-color: rgba(55, 77, 245, 0.15);
+  border-color: rgba(55, 77, 245, 0.15);
+  color: #374df5;
+  box-shadow: none;
+  outline: none;
+}
+.ostias .fc .fc-button-primary:not(:disabled).fc-button-active,
+.ostias .fc .fc-button-primary:not(:disabled):active {
+  background-color: rgba(55, 77, 245, 0.15);
+  border-color: rgba(55, 77, 245, 0.15);
+  color: #374df5;
+}
+.ostias .fc .fc-toolbar.fc-header-toolbar {
+  margin: 0;
+  padding: 1rem 0.5rem 0.1rem 0.5rem;
+}
+.ostias .fc .fc-col-header-cell-cushion {
+  color: rgba(34, 34, 38, 0.45);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  padding: 8px 0;
+}
+.ostias .fc .fc-daygrid-day-events {
+  margin: 0;
+}
+.ostias .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
+  margin-bottom: 0;
+}
+.ostias .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+  min-height: 0.5em;
+}
+.ostias .fc-daygrid-day-frame.fc-scrollgrid-sync-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ostias .fc .fc-daygrid-day.fc-day-today {
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 700;
+}
+.ostias .fc .fc-daygrid-day-number {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 4;
+}
+.ostias button.fc-today-button.fc-button.fc-button-primary {
+  outline: none;
+  box-sizing: border-box;
+  transition: background-color 200ms ease 0s, box-shadow 200ms ease 0s,
+    border-color 200ms ease 0s, color 200ms ease 0s;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  z-index: 1;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  -webkit-font-smoothing: antialiased;
+  font: 500 12px "Sofascore Sans", sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+  border-radius: 24px;
+  padding: 4px 12px;
+  color: #fff;
+  background-color: #374df5;
+  border: 1.5px solid #374df5;
+}
