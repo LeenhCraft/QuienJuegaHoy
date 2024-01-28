@@ -3,7 +3,7 @@ export const LinksArray = [
   {
     label: "Partidos",
     icon: "/svg/balon.svg",
-    to: "/partidos",
+    to: "/",
   },
   {
     label: "Ligas",
