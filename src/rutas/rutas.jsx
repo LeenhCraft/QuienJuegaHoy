@@ -13,7 +13,6 @@ export function MisRutas() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/partidos" element={<Home />} />
       <Route path="/ligas" element={<Ligas />} />
       <Route path="/buscar" element={<Buscar />} />
       <Route path="/login" element={<Login />} />
