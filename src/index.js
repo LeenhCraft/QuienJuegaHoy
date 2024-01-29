@@ -32,6 +32,7 @@ export * from './contextos/authContext';
 export * from './estilos/breakpoints';
 export * from './estilos/temas';
 export * from './estilos/variables';
+export * from './football-data.org/fetchData';
 export * from './hooks/protectorRutas';
 export { default as scrollHook } from './hooks/scrollHook';
 export * from './main';
